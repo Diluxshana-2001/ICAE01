@@ -1,8 +1,24 @@
 import '../assets/CSS/layout.css';
-export default function Product(){
+export default function Product({key,product,setCart,setTot}){
+    const [quantity,setQuantity]=useState(0);
+
+    const addToCart = () => {
+        if (quantity > 0) {
+          setCart((prev) => [
+            ...prev,
+            {
+              product: product.name,
+              quantity,
+              price: product.price,
+            },
+          ]);
     
+          setTot((prevTotal) => prevTotal + product.price * quantity);
+        }
+      };
+
     return(
-        <div className="grid-item">
+        <div className="grid-item" key={key}>
 
             <div class="card">
                 <img  />
