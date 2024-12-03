@@ -6,9 +6,9 @@ export default function Product({flowers}){
         {flowers.map((flower)=>(
         <div className="grid-item">
             <div class="card">
-                <img  />
+                <img  src={require(`../assets/image/`+flower.img)} className="card img"/>
                 <div class="card-body">
-                    <h5 class="card-title">Price:</h5>
+                    <h5 class="card-title">{flower.name}  price: {flower.price}</h5>
                     <div class="quantity-container">
                         <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" />
