@@ -1,12 +1,13 @@
-
 import '../assets/CSS/layout.css';
-import {useState} from 'react';
 import {flowers} from './FlowerDB';
 import Product from './Product';
 import Cart from './Cart';
+import {useState} from 'react'
 
 export default function Products(){
-   
+    const[cart,setCart]=useState([]);
+    const[total,setTot]=useState(0);
+
     return(
         <>
             <div className="item1">
