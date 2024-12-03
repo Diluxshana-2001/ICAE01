@@ -1,9 +1,10 @@
 import '../assets/CSS/layout.css';
-export default function Product(){
+export default function Product({flowers}){
     
     return(
+        <>
+        {flowers.map((flower)=>(
         <div className="grid-item">
-
             <div class="card">
                 <img  />
                 <div class="card-body">
@@ -16,5 +17,7 @@ export default function Product(){
                 </div>
             </div>
         </div>
+        ))}
+        </>
     );
 }
