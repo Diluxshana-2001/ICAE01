@@ -1,7 +1,8 @@
 
 import '../assets/CSS/layout.css';
-
-
+import {flowers} from './FlowerDB';
+import Product from './Product';
+import Cart from './Cart';
 export default function Products(){
    
     return(
@@ -14,6 +15,7 @@ export default function Products(){
                 <div className="grid-container">
                     {
                         //product
+                        <Product flowers={flowers} />
                     }
                 </div>
 
@@ -21,6 +23,7 @@ export default function Products(){
             <div className="item3">
                 {
                 //cart
+                <Cart Cart={Cart} />
                 }
             </div>
         </>
