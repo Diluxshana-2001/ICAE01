@@ -1,6 +1,7 @@
 import '../assets/CSS/layout.css';
+import {useState} from 'react';
 export default function Product({flowers}){
-    
+    const [quantity,setQuantity] = useState(0);
     return(
         <>
         {flowers.map((flower)=>(
@@ -13,7 +14,12 @@ export default function Product({flowers}){
                         <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" />
                     </div>
-                    <button class="card-button">Add to Cart</button>
+                    <button class="card-button" 
+                    onClick={()=>{
+                        const changeQuantity = (e) =>{
+                            setQuantity(parseInt(e.target.value,10));
+                        } 
+                    }}>Add to Cart</button>
                 </div>
             </div>
         </div>
